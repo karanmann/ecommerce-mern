@@ -1,5 +1,11 @@
+import MainPage from "./pages/MainPage";
+
 const App = () => {
-  return <div className="App">Basic React App</div>;
-}
+  return (
+    <div className="App">
+      <MainPage />
+    </div>
+  );
+};
 
 export default App;

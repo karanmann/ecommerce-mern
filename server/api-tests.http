@@ -1,0 +1,20 @@
+### POST PRODUCTS
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+  "products" : {
+    "id": 1,
+    "name": "Cement 1",
+    "image_ur":"this is a url",
+    "discription_long": "I am a very long discription",
+    "discription_small": "short-discription",
+    "price": "300",
+    "quantity_m available": "100",
+    "available": true
+  }
+}
+
+### GET
+
+
