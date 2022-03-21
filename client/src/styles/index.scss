@@ -28,6 +28,7 @@ body {
   font-family: 'Fredoka', Arial, Helvetica, sans-serif;
 }
 
+
 /* LAYOUT */
 
 .grid-container {
@@ -139,6 +140,9 @@ img.medium {
   margin: 0.1rem
 }
 
+.rating span:last-child {
+  color: black;
+}
 
 
 .button {
