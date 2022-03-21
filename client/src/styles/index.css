@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-size: 62.5%;
   /* 16px x 62.5 = 10px = 1rem */
@@ -10,10 +10,9 @@ body {
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
-  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* LAYOUT */
 .grid-container {
   display: -ms-grid;
   display: grid;
@@ -68,7 +67,30 @@ a:hover {
   font-weight: 600;
 }
 
-/* HEADER */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4;
+  font-size: 1.6rem;
+  background-color: #00a131;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0c7a2d;
+}
+
 header a {
   color: #eb001e;
   padding: 1rem;
@@ -100,9 +122,31 @@ a.brand {
           justify-content: center;
 }
 
-/* IMAGE */
+.row.top {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.col-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+}
+
+.col-2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 50rem;
+          flex: 2 1 50rem;
+}
+
 img {
   border-radius: 0.5rem;
+}
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
 }
 
 img.medium {
@@ -110,7 +154,10 @@ img.medium {
   width: 100%;
 }
 
-/* CARD  */
+img.large {
+  width: 100%;
+}
+
 .card {
   border: 0.1rem solid #4F4F4F;
   background-color: white;
@@ -127,7 +174,6 @@ img.medium {
   font-size: 2rem;
 }
 
-/* RATING */
 .rating span {
   color: gold;
   margin: 0.1rem;
@@ -135,6 +181,30 @@ img.medium {
 
 .rating span:last-child {
   color: black;
+}
+
+.success {
+  color: #20a220;
+}
+
+.error {
+  color: #eb001e;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+.alert-error {
+  color: #a02020;
+  background-color: #ffe0e0e0;
 }
 
 .button {
