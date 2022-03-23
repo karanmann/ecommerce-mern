@@ -146,15 +146,16 @@ img {
 
 img.small {
   max-width: 5rem;
-  width: 100%;
+  width: 70%;
 }
 
 img.medium {
-  max-width: 29rem;
+  max-width: 23rem;
   width: 100%;
 }
 
 img.large {
+  max-width: 50rem;
   width: 100%;
 }
 
