@@ -153,6 +153,10 @@ a.brand {
   flex: 2 1 50rem;
 }
 
+.min-30 {
+  min-width: 30rem;
+}
+
 // IMAGE
 
 img {
@@ -204,6 +208,8 @@ img.large {
   color: black;
 }
 
+
+
 // ALERT
 
 .success {
@@ -211,7 +217,7 @@ img.large {
 }
 
 .error {
-  color: #$pallet-red;
+  color: $pallet-red;
 }
 
 .alert {
