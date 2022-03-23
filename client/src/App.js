@@ -1,4 +1,5 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 
@@ -8,9 +9,7 @@ const App = () => {
       <div className="grid-container">
         <header className="row">
           <div>
-            <a className="brand" href="index.html">
-              BUILD MORE
-            </a>
+            <Link className="brand" to="/">BUILD MORE</Link>
           </div>
           <div>
             <a href="cart.html">Cart</a>
@@ -18,6 +17,7 @@ const App = () => {
           </div>
         </header>
         <main>
+          <Route path="/cart/:id?" component={CartPage}></Route>
           <Route
               path="/product/:id"
               component={ProductPage}

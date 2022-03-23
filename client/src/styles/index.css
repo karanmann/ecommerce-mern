@@ -208,18 +208,25 @@ img.large {
   background-color: #ffe0e0e0;
 }
 
-.button {
-  border: none;
+input,
+select,
+textarea,
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+}
+
+button {
   background-color: #00a131;
-  padding: 10px 15px;
-  color: white;
   cursor: pointer;
 }
 
-.button:hover {
-  gap: 2px;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+button:hover {
+  gap: 1px;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   background-color: #0c7a2d;
