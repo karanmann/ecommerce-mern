@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addToCart } from "../redux/actions/cartActions";
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 import MessageBox from "../components/MessageBox";
 
 const CartPage = (props) => {
@@ -27,7 +27,9 @@ const CartPage = (props) => {
     props.history.push('/signin?redirect=shipping');
   };
 
-  const removeFromCartHandler = (id) => {};
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id))
+  };
 
   return (
     <div className="row top">
