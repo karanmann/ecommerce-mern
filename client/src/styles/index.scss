@@ -57,7 +57,7 @@ main {
 footer {
   grid-area: footer;
   background-color: $pallet-yellow;
-  color: rgb(235, 0, 30);
+  color: $pallet-red;
 }
 
 /* COMMON */
@@ -74,11 +74,11 @@ h2 {
 
 a {
   text-decoration: none;
-  color: rgb(235, 0, 30);
+  color: $pallet-red;
 }
 
 a:hover {
-  color: rgb(235, 0, 30);
+  color: $pallet-red;
   font-weight: 600;
 }
 
@@ -110,14 +110,24 @@ button:hover {
 // HEADER
 
 header a {
-  color: rgb(235, 0, 30);
+  color: $pallet-red;
   padding: 1rem
 }
 
 a.brand {
-  color: rgb(235, 0, 30);
+  color: $pallet-red;
   font-weight: bold;
   font-size: 3rem;
+}
+
+.badge {
+  background-color: $pallet-green;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+
 }
 
 .row {
@@ -201,7 +211,7 @@ img.large {
 }
 
 .error {
-  color: #eb001e;
+  color: #$pallet-red;
 }
 
 .alert {

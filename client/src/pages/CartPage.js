@@ -1,10 +1,20 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/actions/cartActions";
 
 const CartPage = (props) => {
   const productId = props.match.params.id;
   const qty = props.location.search
-    ? Number(props.location.search.split('=')[1])
+    ? Number(props.location.search.split("=")[1])
     : 1;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (productId) {
+      dispatch(addToCart(productId, qty));
+    }
+  }, [dispatch, productId, qty]);
   return (
     <div>
       <h1>Cart Screen</h1>
@@ -13,6 +23,6 @@ const CartPage = (props) => {
       </p>
     </div>
   );
-}
+};
 
-export default CartPage
+export default CartPage;
