@@ -17,7 +17,7 @@ const Product = ({ product }) => {
           </Link>
           <Rating rating={rating} numReviews={numReviews} />
           <div>
-            <p className="price">Price: €{price}</p>
+            <p className="price">Price: ${price}</p>
           </div>
         </div>
       </div>
