@@ -78,7 +78,6 @@ const ProductPage = (props) => {
                       </div>
                     </div>
                   </li>
-                  {console.log(product.countInStock)}
                   {product.countInStock > 0 && (
                     <div>
                       <li>
