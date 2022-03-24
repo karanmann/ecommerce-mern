@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import SigninPage from "./pages/SigninPage";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -29,6 +30,7 @@ const App = () => {
         <main>
           <Route path="/cart/:id?" component={CartPage}></Route>
           <Route path="/product/:id" component={ProductPage} exact></Route>
+          <Route path="/signin" component={SigninPage} exact></Route>
           <Route path="/" component={HomePage} exact></Route>
         </main>
         <footer className="row center">All rights reserved</footer>
