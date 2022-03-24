@@ -2,7 +2,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler'; // Prevents the continuos loading
 import data from '../data/data.js';
-import User from '../model/userModel.js';
+import User from '../models/userModel.js';
 
 const userRouter = express.Router();
 

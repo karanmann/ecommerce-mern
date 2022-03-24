@@ -17,8 +17,7 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt1",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 120,
@@ -29,8 +28,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "2",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt2",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 121,
@@ -41,8 +39,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "3",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt3",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 122,
@@ -53,8 +50,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "4",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt4",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 123,
@@ -65,8 +61,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "5",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt5",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 124,
@@ -77,8 +72,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "6",
-      name: "Nike Slim Shirt",
+      name: "Nike Slim Shirt6",
       category: "Shirts",
       image: "/images/p1.jpg",
       price: 125,
