@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-mern",
+  "version": "1.0.0",
+  "description": "- An ecommerce site created using the MERN (MongoDB, Express.js, React.js and Node.js) stack to be able to login, view products and order products. ### Tech applied - - React.js with Hooks - Redux - Node - Express - MongoDB - SASS - Netlify - Heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm install --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanmann/ecommerce-mern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karanmann/ecommerce-mern/issues"
+  },
+  "homepage": "https://github.com/karanmann/ecommerce-mern#readme"
+}
