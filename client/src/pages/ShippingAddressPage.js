@@ -41,7 +41,6 @@ const ShippingAddressPage = (props) => {
             placeholder="Enter full name"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            autoComplete="fullname"
             required
           ></input>
         </div>
