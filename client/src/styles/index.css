@@ -178,16 +178,15 @@ img.large {
 
 .card {
   background-color: white;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 2rem;
+  padding: 2rem;
   -webkit-box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
@@ -293,7 +292,7 @@ button:hover {
   min-width: 10rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: #ffe131;
   margin: 0;
   border-radius: 0.5rem;
 }
@@ -312,7 +311,7 @@ button:hover {
 }
 
 .checkout-steps > div.active {
-  border-top: 0.3rem solid #f08000;
-  color: #f08000;
+  border-top: 0.3rem solid #0c7a2d;
+  color: #0c7a2d;
 }
 /*# sourceMappingURL=index.css.map */

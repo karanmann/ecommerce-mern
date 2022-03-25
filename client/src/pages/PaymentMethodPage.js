@@ -1,22 +1,23 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import CheckoutSteps from "../components/CheckoutSteps";
-import { savePaymentMethod} from '../redux/actions/cartActions'
-import ShippingAddressPage from "./ShippingAddressPage";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { savePaymentMethod } from '../redux/actions/cartActions';
+import CheckoutSteps from '../components/CheckoutSteps';
 
-const PaymentMethodPage = (props) => {
-  const cart = useSelector(state=> state.cart)
-  if (!ShippingAddressPage.address) {
-    props.history.push('/shipping')
+const PaymentMethodPage = (props) =>{
+  const cart = useSelector((state) => state.cart);
+  const { shippingAddress } = cart;
+
+  if (!shippingAddress.address) {
+    props.history.push('/shipping');
   }
 
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
-  const dispatch = useDispatch()
-
+  const [paymentMethod, setPaymentMethod] = useState('PayPal');
+  const dispatch = useDispatch();
+  
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paymentMethod))
-    props.history.push('./placeorder')
+    dispatch(savePaymentMethod(paymentMethod));
+    props.history.push('/placeorder');
   };
 
   return (
@@ -36,7 +37,7 @@ const PaymentMethodPage = (props) => {
               required
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
-            />
+            ></input>
             <label htmlFor="paypal">PayPal</label>
           </div>
         </div>
@@ -48,13 +49,13 @@ const PaymentMethodPage = (props) => {
               value="Stripe"
               name="paymentMethod"
               required
-              checked
               onChange={(e) => setPaymentMethod(e.target.value)}
-            />
+            ></input>
             <label htmlFor="stripe">Stripe</label>
           </div>
         </div>
         <div>
+          <label />
           <button className="primary" type="submit">
             Continue
           </button>
@@ -62,6 +63,6 @@ const PaymentMethodPage = (props) => {
       </form>
     </div>
   );
-};
+}
 
-export default PaymentMethodPage;
+export default PaymentMethodPage
