@@ -42,6 +42,7 @@ const SigninPage = (props) => {
             type="email"
             id="email"
             placeholder="Enter email"
+            autoComplete="username"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
@@ -52,6 +53,7 @@ const SigninPage = (props) => {
             type="password"
             id="password"
             placeholder="Enter password"
+            autoComplete="current-password"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>

@@ -66,6 +66,7 @@ const RegisterPage = (props) => {
             type="password"
             id="password"
             placeholder="Enter password"
+            autoComplete="current-password"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
@@ -76,6 +77,7 @@ const RegisterPage = (props) => {
             type="password"
             id="confirmPassword"
             placeholder="Enter confirm password"
+            autoComplete="current-password"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>

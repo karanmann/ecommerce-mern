@@ -190,7 +190,7 @@ img.large {
   border-radius: 0.5rem;
   margin: 1rem;
   padding: 1rem;
-  box-shadow: 2px 2px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card:hover {
@@ -283,7 +283,7 @@ button:hover {
   margin: 0 auto;
 }
 
-.form > div {
+.form>div {
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -315,4 +315,18 @@ button:hover {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+// CHECKOUT STEPS
+
+.checkout-steps>div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem
+}
+
+.checkout-steps>div.active {
+  border-top: 0.3rem solid #f08000;
+  color: #f08000;
 }
