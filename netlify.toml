@@ -4,4 +4,3 @@
   base = "/client"
   publish = "/build"
   command = "CI= npm run build"
-  
