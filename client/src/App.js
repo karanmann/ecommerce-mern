@@ -8,8 +8,9 @@ import ProductPage from "./pages/ProductPage";
 import SigninPage from "./pages/SigninPage";
 import RegisterPage from "./pages/RegisterPage";
 import ShippingAddressPage from "./pages/ShippingAddressPage";
-import PaymentMethodPage from './pages/PaymentMethodPage'
+import PaymentMethodPage from "./pages/PaymentMethodPage";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
+import OrderPage from "./pages/OrderPage";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/payment" component={PaymentMethodPage}></Route>
           <Route path="/placeorder" component={PlaceOrderPage}></Route>
           <Route path="/" component={HomePage} exact></Route>
+          <Route path="/order/:id" component={OrderPage}></Route>
         </main>
         <footer className="row center">All rights reserved</footer>
       </div>
