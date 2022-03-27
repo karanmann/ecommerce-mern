@@ -14,10 +14,10 @@ const mongoUrl = process.env.MONGODB_URL || "mongodb://localhost/buildmore";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
+
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
-
 app.get('/', (req, res) => {
   res.send('Server is ready');
 });
