@@ -91,7 +91,6 @@ button {
   border: 0.1rem #a4a4a4;
   font-size: 1.6rem;
   background-color: #00a131;
-  width: 100%;
   cursor: pointer;
 }
 
@@ -269,6 +268,14 @@ button:hover {
   background-color: #0c7a2d;
 }
 
+button.small {
+  font-size: 1.2rem;
+}
+
+button.block {
+  width: 100%;
+}
+
 .form {
   max-width: 60rem;
   margin: 0 auto;
@@ -322,5 +329,26 @@ button:hover {
 .checkout-steps > div.active {
   border-top: 0.3rem solid #0c7a2d;
   color: #0c7a2d;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+
+.table button {
+  margin: 0 0.2rem;
 }
 /*# sourceMappingURL=index.css.map */

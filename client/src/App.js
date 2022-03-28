@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import { signout } from "./redux/actions/userActions";
 
+import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
@@ -12,6 +14,10 @@ import ShippingAddressPage from "./pages/ShippingAddressPage";
 import PaymentMethodPage from "./pages/PaymentMethodPage";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderPage from "./pages/OrderPage";
+import OrderHistoryPage from "./pages/OrderHistoryPage";
+import ProductListPage from './pages/ProductListPage';
+import ProductEditPage from "./pages/ProductEditPage";
+import OrderListPage from "./pages/OrderListPage";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -45,6 +51,9 @@ const App = () => {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
+                    <Link to="/orderhistory">Order History</Link>
+                  </li>
+                  <li>
                     <Link to="/profile">User Profile</Link>
                   </li>
                   <li>
@@ -57,17 +66,47 @@ const App = () => {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Admin <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/productlist">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist">Orders</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
         <main>
           <Route path="/cart/:id?" component={CartPage}></Route>
           <Route path="/product/:id" component={ProductPage} exact></Route>
+          <Route
+            path="/product/:id/edit"
+            component={ProductEditPage}
+            exact
+          ></Route>
           <Route path="/signin" component={SigninPage} exact></Route>
           <Route path="/register" component={RegisterPage} exact></Route>
           <Route path="/shipping" component={ShippingAddressPage}></Route>
           <Route path="/payment" component={PaymentMethodPage}></Route>
           <Route path="/placeorder" component={PlaceOrderPage}></Route>
           <Route path="/profile" component={ProfilePage}></Route>
+          <Route path="/orderhistory" component={OrderHistoryPage}></Route>
+          <PrivateRoute path="/profile" component={ProfilePage}></PrivateRoute>
+          <AdminRoute
+            path="/productlist"
+            component={ProductListPage}
+          ></AdminRoute>
+          <AdminRoute
+            path="/orderlist"
+            component={OrderListPage}
+          ></AdminRoute>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/order/:id" component={OrderPage}></Route>
         </main>
