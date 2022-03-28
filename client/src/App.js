@@ -20,6 +20,7 @@ import ProductEditPage from "./pages/ProductEditPage";
 import OrderListPage from "./pages/OrderListPage";
 import UserListPage from "./pages/UserListPage";
 import UserEditPage from "./pages/UserEditPage";
+import SellerRoute from "./components/SellerRoute";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -68,6 +69,21 @@ const App = () => {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isSeller && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Seller <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/productlist/seller">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist/seller">Orders</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -107,13 +123,22 @@ const App = () => {
           <AdminRoute
             path="/productlist"
             component={ProductListPage}
+            exact
           ></AdminRoute>
-          <AdminRoute path="/orderlist" component={OrderListPage}></AdminRoute>
+          <AdminRoute path="/orderlist" component={OrderListPage} exact></AdminRoute>
           <AdminRoute
             path="/user/:id/edit"
             component={UserEditPage}
           ></AdminRoute>
           <AdminRoute path="/userlist" component={UserListPage}></AdminRoute>
+          <SellerRoute
+            path="/productlist/seller"
+            component={ProductListPage}
+          ></SellerRoute>
+          <SellerRoute
+            path="/orderlist/seller"
+            component={OrderListPage}
+          ></SellerRoute>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/order/:id" component={OrderPage}></Route>
         </main>
