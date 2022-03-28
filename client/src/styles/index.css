@@ -185,6 +185,7 @@ img.large {
   padding: 2rem;
   -webkit-box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 2px 2px 17px 0px rgba(0, 0, 0, 0.75);
+  height: 45rem;
 }
 
 .card:hover {
@@ -350,5 +351,18 @@ button.block {
 
 .table button {
   margin: 0 0.2rem;
+}
+
+/* Search */
+.search button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-right: none;
+  margin-right: 0.5rem;
+}
+
+.search input {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: none;
+  margin-left: 0.5rem;
 }
 /*# sourceMappingURL=index.css.map */

@@ -4,6 +4,8 @@
   "description": "- An ecommerce site created using the MERN (MongoDB, Express.js, React.js and Node.js) stack to be able to login, view products and order products. ### Tech applied - - React.js with Hooks - Redux - Node - Express - MongoDB - SASS - Netlify - Heroku",
   "main": "index.js",
   "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npm install --prefix server"
   },
