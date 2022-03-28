@@ -151,6 +151,10 @@ a.brand {
   align-items: flex-start;
 }
 
+.row.start {
+  justify-content: flex-start;
+}
+
 .col-1 {
   flex: 1 1 25rem;
 }
@@ -159,8 +163,16 @@ a.brand {
   flex: 2 1 50rem;
 }
 
+.col-3 {
+  flex: 32 1 75rem;
+}
+
 .min-30 {
   min-width: 30rem;
+}
+
+.p-1 {
+  padding: 1rem;
 }
 
 // IMAGE
@@ -351,15 +363,18 @@ button.block {
   width: 100%;
   border-collapse: collapse;
 }
+
 .table tbody tr:nth-of-type(odd) {
   background-color: #f4f4f4;
 }
+
 .table td,
 .table th {
   text-align: left;
   border: 0.1rem solid #e4e4e4;
   padding: 0.5rem;
 }
+
 .table button {
   margin: 0 0.2rem;
 }
@@ -370,6 +385,7 @@ button.block {
   border-right: none;
   margin-right: 0.5rem;
 }
+
 .search input {
   border-radius: 0.5rem 0 0 0.5rem;
   border-right: none;

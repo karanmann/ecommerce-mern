@@ -21,6 +21,7 @@ import OrderListPage from "./pages/OrderListPage";
 import UserListPage from "./pages/UserListPage";
 import UserEditPage from "./pages/UserEditPage";
 import SellerRoute from "./components/SellerRoute";
+import SellerPage from "./pages/SellerPage";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -105,6 +106,7 @@ const App = () => {
           </div>
         </header>
         <main>
+        <Route path="/seller/:id" component={SellerPage}></Route>
           <Route path="/cart/:id?" component={CartPage}></Route>
           <Route path="/product/:id" component={ProductPage} exact></Route>
           <Route

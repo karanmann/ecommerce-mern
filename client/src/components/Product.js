@@ -3,7 +3,7 @@ import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { name, image, price, rating, numReviews } = product;
+  const { name, image, rating, numReviews } = product;
 
   return (
     <div className="row center">
@@ -16,8 +16,13 @@ const Product = ({ product }) => {
             <h2>{name}</h2>
           </Link>
           <Rating rating={rating} numReviews={numReviews} />
-          <div>
-            <p className="price">Price: ${price}</p>
+          <div className="row">
+            <div className="price">${product.price}</div>
+            <div>
+              <Link to={`/seller/${product.seller._id}`}>
+                {product.seller.seller.name}
+              </Link>
+            </div>
           </div>
         </div>
       </div>
