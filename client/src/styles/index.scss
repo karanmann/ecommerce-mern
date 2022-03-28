@@ -20,9 +20,12 @@ html {
   font-size: 62.5%;
   /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
+  background-image: url('../assets/backgroundImage.jpg');
+  background-attachment: fixed;
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
@@ -50,11 +53,12 @@ body {
 header {
   grid-area: header;
   background-color: $pallet-yellow;
+  height: 70px
 }
 
 main {
   grid-area: main;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 footer {
@@ -309,7 +313,7 @@ button:hover {
   position: absolute;
   display: none;
   right: 0;
-  min-width: 10rem;
+  min-width: 15rem;
   padding: 1rem;
   z-index: 1;
   background-color: $pallet-yellow;

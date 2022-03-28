@@ -19,7 +19,7 @@ const HomePage = () => {
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
+        <MessageBox variant="error">{error}</MessageBox>
       ) : (
         <div className="row center">
           {products.map((product) => (

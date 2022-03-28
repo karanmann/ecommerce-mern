@@ -4,9 +4,12 @@ html {
   /* 16px x 62.5 = 10px = 1rem */
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
+  background-image: url("../assets/backgroundImage.jpg");
+  background-attachment: fixed;
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
@@ -33,13 +36,14 @@ header {
   -ms-grid-column: 1;
   grid-area: header;
   background-color: #ffe131;
+  height: 70px;
 }
 
 main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: main;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 footer {
@@ -294,7 +298,7 @@ button:hover {
   position: absolute;
   display: none;
   right: 0;
-  min-width: 10rem;
+  min-width: 15rem;
   padding: 1rem;
   z-index: 1;
   background-color: #ffe131;

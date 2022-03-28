@@ -77,7 +77,7 @@ const OrderPage = (props) => {
                     Delivered at {order.deliveredAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Delivered</MessageBox>
+                  <MessageBox variant="error">Not Delivered</MessageBox>
                 )}
               </div>
             </li>
@@ -92,7 +92,7 @@ const OrderPage = (props) => {
                     Paid at {order.paidAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Not Paid</MessageBox>
+                  <MessageBox variant="error">Not Paid</MessageBox>
                 )}
               </div>
             </li>
@@ -168,7 +168,7 @@ const OrderPage = (props) => {
                   ) : (
                     <>
                       {errorPay && (
-                        <MessageBox variant="danger">{errorPay}</MessageBox>
+                        <MessageBox variant="error">{errorPay}</MessageBox>
                       )}
                       {loadingPay && <LoadingBox></LoadingBox>}
 

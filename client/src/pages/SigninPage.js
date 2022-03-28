@@ -35,7 +35,7 @@ const SigninPage = (props) => {
           <h1>Sign In</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
-        {error && <MessageBox variant="danger">{error}</MessageBox>}
+        {error && <MessageBox variant="error">{error}</MessageBox>}
         <div>
           <label htmlFor="email">Email address</label>
           <input

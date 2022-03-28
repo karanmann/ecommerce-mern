@@ -39,7 +39,7 @@ const RegisterPage = (props) => {
           <h1>Create Account</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
-        {error && <MessageBox variant="danger">{error}</MessageBox>}
+        {error && <MessageBox variant="error">{error}</MessageBox>}
         <div>
           <label htmlFor="name">Name</label>
           <input

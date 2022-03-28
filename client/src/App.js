@@ -5,6 +5,7 @@ import { signout } from "./redux/actions/userActions";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import ProfilePage from "./pages/ProfilePage";
 import SigninPage from "./pages/SigninPage";
 import RegisterPage from "./pages/RegisterPage";
 import ShippingAddressPage from "./pages/ShippingAddressPage";
@@ -44,6 +45,9 @@ const App = () => {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
+                    <Link to="/profile">User Profile</Link>
+                  </li>
+                  <li>
                     <Link to="#signout" onClick={signoutHandler}>
                       Sign Out
                     </Link>
@@ -63,6 +67,7 @@ const App = () => {
           <Route path="/shipping" component={ShippingAddressPage}></Route>
           <Route path="/payment" component={PaymentMethodPage}></Route>
           <Route path="/placeorder" component={PlaceOrderPage}></Route>
+          <Route path="/profile" component={ProfilePage}></Route>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/order/:id" component={OrderPage}></Route>
         </main>

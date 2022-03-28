@@ -132,7 +132,7 @@ const PlaceOrderPage = (props) => {
                 </button>
               </li>
               {loading && <LoadingBox></LoadingBox>}
-              {error && <MessageBox variant="danger">{error}</MessageBox>}
+              {error && <MessageBox variant="error">{error}</MessageBox>}
             </ul>
           </div>
         </div>
