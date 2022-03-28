@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Axios from 'axios'
 import { detailsProduct, updateProduct } from "../redux/actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../redux/constants/productConstants";
 import LoadingBox from "../components/LoadingBox";
@@ -60,6 +61,30 @@ const ProductEditPage = (props) => {
     );
   };
 
+  const [loadingUpload, setLoadingUpload] = useState(false);
+  const [errorUpload, setErrorUpload] = useState('');
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0];
+    const bodyFormData = new FormData();
+    bodyFormData.append('image', file);
+    setLoadingUpload(true);
+    try {
+      const { data } = await Axios.post('/api/uploads', bodyFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      });
+      setImage(data);
+      setLoadingUpload(false);
+    } catch (error) {
+      setErrorUpload(error.message);
+      setLoadingUpload(false);
+    }
+  };
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -67,11 +92,11 @@ const ProductEditPage = (props) => {
           <h1>Edit Product {productId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
-        {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
+        {errorUpdate && <MessageBox variant="error">{errorUpdate}</MessageBox>}
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
+          <MessageBox variant="error">{error}</MessageBox>
         ) : (
           <>
             <div>
@@ -103,6 +128,19 @@ const ProductEditPage = (props) => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></input>
+            </div>
+            <div>
+              <label htmlFor="imageFile">Image File</label>
+              <input
+                type="file"
+                id="imageFile"
+                label="Choose Image"
+                onChange={uploadFileHandler}
+              ></input>
+              {loadingUpload && <LoadingBox></LoadingBox>}
+              {errorUpload && (
+                <MessageBox variant="error">{errorUpload}</MessageBox>
+              )}
             </div>
             <div>
               <label htmlFor="category">Category</label>

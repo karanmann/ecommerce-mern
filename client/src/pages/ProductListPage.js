@@ -63,7 +63,7 @@ const ProductListPage = (props) => {
         </button>
       </div>
       {loadingDelete && <LoadingBox></LoadingBox>}
-      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
+      {errorDelete && <MessageBox variant="error">{errorDelete}</MessageBox>}
       {loadingCreate && <LoadingBox></LoadingBox>}
       {errorCreate && <MessageBox variant="error">{errorCreate}</MessageBox>}
       {loading ? (

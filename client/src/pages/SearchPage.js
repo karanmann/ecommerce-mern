@@ -20,7 +20,7 @@ const SearchPage = (props) => {
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
+          <MessageBox variant="error">{error}</MessageBox>
         ) : (
           <div>{products.length} Results</div>
         )}
@@ -36,7 +36,7 @@ const SearchPage = (props) => {
           {loading ? (
             <LoadingBox></LoadingBox>
           ) : error ? (
-            <MessageBox variant="danger">{error}</MessageBox>
+            <MessageBox variant="error">{error}</MessageBox>
           ) : (
             <>
               {products.length === 0 && (

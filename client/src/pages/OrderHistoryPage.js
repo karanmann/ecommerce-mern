@@ -17,7 +17,7 @@ const OrderHistoryPage = (props) => {
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
+        <MessageBox variant="error">{error}</MessageBox>
       ) : (
         <table className="table">
           <thead>

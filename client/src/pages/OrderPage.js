@@ -212,7 +212,7 @@ const OrderPage = (props) => {
                 <li>
                   {loadingDeliver && <LoadingBox></LoadingBox>}
                   {errorDeliver && (
-                    <MessageBox variant="danger">{errorDeliver}</MessageBox>
+                    <MessageBox variant="error">{errorDeliver}</MessageBox>
                   )}
                   <button
                     type="button"

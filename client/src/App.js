@@ -15,9 +15,11 @@ import PaymentMethodPage from "./pages/PaymentMethodPage";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderPage from "./pages/OrderPage";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
-import ProductListPage from './pages/ProductListPage';
+import ProductListPage from "./pages/ProductListPage";
 import ProductEditPage from "./pages/ProductEditPage";
 import OrderListPage from "./pages/OrderListPage";
+import UserListPage from "./pages/UserListPage";
+import UserEditPage from "./pages/UserEditPage";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -78,6 +80,9 @@ const App = () => {
                   <li>
                     <Link to="/orderlist">Orders</Link>
                   </li>
+                  <li>
+                    <Link to="/userlist">Users</Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -103,10 +108,12 @@ const App = () => {
             path="/productlist"
             component={ProductListPage}
           ></AdminRoute>
+          <AdminRoute path="/orderlist" component={OrderListPage}></AdminRoute>
           <AdminRoute
-            path="/orderlist"
-            component={OrderListPage}
+            path="/user/:id/edit"
+            component={UserEditPage}
           ></AdminRoute>
+          <AdminRoute path="/userlist" component={UserListPage}></AdminRoute>
           <Route path="/" component={HomePage} exact></Route>
           <Route path="/order/:id" component={OrderPage}></Route>
         </main>

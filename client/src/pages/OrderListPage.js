@@ -33,11 +33,11 @@ const OrderListPage = (props) => {
     <div>
       <h1>Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
-      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
+      {errorDelete && <MessageBox variant="error">{errorDelete}</MessageBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
+        <MessageBox variant="error">{error}</MessageBox>
       ) : (
         <table className="table">
           <thead>
