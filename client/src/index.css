@@ -1,3 +1,26 @@
+
+/* Purple 50
+#FAF5FF
+Purple 100
+#E9D8FD
+Purple 200
+#D6BCFA
+Purple 300
+#B794F4
+Purple 400
+#9F7AEA
+Purple 500
+#805AD5
+Purple 600
+#6B46C1
+Purple 700
+#553C9A
+Purple 800
+#44337A
+Purple 900
+#322659 */
+
+
 html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
@@ -9,6 +32,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FAF5FF;
 }
 #root {
   height: 100%;
@@ -18,16 +42,16 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header'
-    'main'
-    'footer';
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 7rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #322659;
 }
 main {
   grid-area: main;
@@ -35,7 +59,7 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: #322659;
   color: #ffffff;
 }
 /* Common */
@@ -82,10 +106,12 @@ input:hover,
 select:hover,
 textarea:hover,
 button:hover {
-  border: 0.1rem #404040 solid;
+  border: 0.1rem #9F7AEA solid;
+  background-color: #553C9A;
+  color: #FAF5FF;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #9F7AEA;
 }
 button.block {
   width: 100%;
@@ -152,9 +178,13 @@ img.large {
 /* Card */
 .card {
   border: 0.1rem #c0c0c0 solid;
-  background-color: #f8f8f8;
+  background-color: #EDF2F7;
   border-radius: 0.5rem;
   margin: 1rem;
+}
+.card:hover {
+  -webkit-box-shadow: 0px 0px 13px 3px #322659;
+  box-shadow: 0px 0px 13px 3px #322659;
 }
 .card-body {
   padding: 1rem;
@@ -225,7 +255,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: #322659;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
