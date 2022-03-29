@@ -1,27 +1,23 @@
-import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import { signout } from "./redux/actions/userActions";
-
-import PrivateRoute from "./components/PrivateRoute";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import { signout } from "./actions/userActions";
 import AdminRoute from "./components/AdminRoute";
-import CartPage from "./pages/CartPage";
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
-import ProfilePage from "./pages/ProfilePage";
-import SigninPage from "./pages/SigninPage";
-import RegisterPage from "./pages/RegisterPage";
-import ShippingAddressPage from "./pages/ShippingAddressPage";
-import PaymentMethodPage from "./pages/PaymentMethodPage";
-import PlaceOrderPage from "./pages/PlaceOrderPage";
-import OrderPage from "./pages/OrderPage";
-import OrderHistoryPage from "./pages/OrderHistoryPage";
-import ProductListPage from "./pages/ProductListPage";
-import ProductEditPage from "./pages/ProductEditPage";
-import OrderListPage from "./pages/OrderListPage";
-import UserListPage from "./pages/UserListPage";
-import UserEditPage from "./pages/UserEditPage";
-import SellerRoute from "./components/SellerRoute";
-import SellerPage from "./pages/SellerPage";
+import PrivateRoute from "./components/PrivateRoute";
+import CartScreen from "./screens/CartScreen";
+import HomeScreen from "./screens/HomeScreen";
+import OrderHistoryScreen from "./screens/OrderHistoryScreen";
+import OrderScreen from "./screens/OrderScreen";
+import PaymentMethodScreen from "./screens/PaymentMethodScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import ProductListScreen from "./screens/ProductListScreen";
+import ProductScreen from "./screens/ProductScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import SigninScreen from "./screens/SigninScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 
 const App = () => {
   const cart = useSelector((state) => state.cart);
@@ -38,7 +34,7 @@ const App = () => {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              BUILD MORE
+              HOUSE OF BRANDS
             </Link>
           </div>
           <div>
@@ -55,10 +51,10 @@ const App = () => {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
-                    <Link to="/orderhistory">Order History</Link>
+                    <Link to="/profile">User Profile</Link>
                   </li>
                   <li>
-                    <Link to="/profile">User Profile</Link>
+                    <Link to="/orderhistory">Order History</Link>
                   </li>
                   <li>
                     <Link to="#signout" onClick={signoutHandler}>
@@ -70,27 +66,15 @@ const App = () => {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
-            {userInfo && userInfo.isSeller && (
-              <div className="dropdown">
-                <Link to="#admin">
-                  Seller <i className="fa fa-caret-down"></i>
-                </Link>
-                <ul className="dropdown-content">
-                  <li>
-                    <Link to="/productlist/seller">Products</Link>
-                  </li>
-                  <li>
-                    <Link to="/orderlist/seller">Orders</Link>
-                  </li>
-                </ul>
-              </div>
-            )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
                   Admin <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
+                  <li>
+                    <Link to="/dashboard">Dashboard</Link>
+                  </li>
                   <li>
                     <Link to="/productlist">Products</Link>
                   </li>
@@ -106,48 +90,38 @@ const App = () => {
           </div>
         </header>
         <main>
-        <Route path="/seller/:id" component={SellerPage}></Route>
-          <Route path="/cart/:id?" component={CartPage}></Route>
-          <Route path="/product/:id" component={ProductPage} exact></Route>
+          <Route path="/cart/:id?" component={CartScreen}></Route>
+          <Route path="/product/:id" component={ProductScreen} exact></Route>
           <Route
             path="/product/:id/edit"
-            component={ProductEditPage}
+            component={ProductEditScreen}
             exact
           ></Route>
-          <Route path="/signin" component={SigninPage} exact></Route>
-          <Route path="/register" component={RegisterPage} exact></Route>
-          <Route path="/shipping" component={ShippingAddressPage}></Route>
-          <Route path="/payment" component={PaymentMethodPage}></Route>
-          <Route path="/placeorder" component={PlaceOrderPage}></Route>
-          <Route path="/profile" component={ProfilePage}></Route>
-          <Route path="/orderhistory" component={OrderHistoryPage}></Route>
-          <PrivateRoute path="/profile" component={ProfilePage}></PrivateRoute>
+          <Route path="/signin" component={SigninScreen}></Route>
+          <Route path="/register" component={RegisterScreen}></Route>
+          <Route path="/shipping" component={ShippingAddressScreen}></Route>
+          <Route path="/payment" component={PaymentMethodScreen}></Route>
+          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
+          <Route path="/order/:id" component={OrderScreen}></Route>
+          <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+          <PrivateRoute
+            path="/profile"
+            component={ProfileScreen}
+          ></PrivateRoute>
           <AdminRoute
             path="/productlist"
-            component={ProductListPage}
-            exact
+            component={ProductListScreen}
           ></AdminRoute>
-          <AdminRoute path="/orderlist" component={OrderListPage} exact></AdminRoute>
           <AdminRoute
-            path="/user/:id/edit"
-            component={UserEditPage}
+            path="/orderlist"
+            component={OrderListScreen}
           ></AdminRoute>
-          <AdminRoute path="/userlist" component={UserListPage}></AdminRoute>
-          <SellerRoute
-            path="/productlist/seller"
-            component={ProductListPage}
-          ></SellerRoute>
-          <SellerRoute
-            path="/orderlist/seller"
-            component={OrderListPage}
-          ></SellerRoute>
-          <Route path="/" component={HomePage} exact></Route>
-          <Route path="/order/:id" component={OrderPage}></Route>
+          <Route path="/" component={HomeScreen} exact></Route>
         </main>
-        <footer className="row center">All rights reserved</footer>
+        <footer className="row center">All right reserved</footer>
       </div>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

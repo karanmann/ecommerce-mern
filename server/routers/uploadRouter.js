@@ -20,3 +20,4 @@ uploadRouter.post('/', isAuth, upload.single('image'), (req, res) => {
 });
 
 export default uploadRouter;
+

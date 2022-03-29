@@ -1,3 +1,5 @@
+import React from "react";
+
 const CheckoutSteps = (props) => {
   return (
     <div className="row checkout-steps">
